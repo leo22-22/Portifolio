@@ -1,11 +1,10 @@
-
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/Portifolio/', 
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
@@ -18,8 +17,6 @@ export default defineConfig({
       'next-themes@0.4.6': 'next-themes',
       'lucide-react@0.487.0': 'lucide-react',
       'input-otp@1.4.2': 'input-otp',
-      // Dentro do objeto alias no vite.config.js
-      // Dentro do objeto alias no seu vite.config.js
       'figma:asset/ranuci1.png': path.resolve(__dirname, './src/assets/ranuci1.png'),
       'figma:asset/ranuci.png': path.resolve(__dirname, './src/assets/ranuci.png'),
       'figma:asset/eu.png': path.resolve(__dirname, './src/assets/eu.png'),
@@ -56,7 +53,7 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
-    outDir: 'build',
+    outDir: 'dist', // Alterado de build para dist para alinhar com o workflow do GitHub
   },
   server: {
     port: 3000,
